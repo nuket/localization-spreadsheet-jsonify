@@ -1,0 +1,45 @@
+<html>
+<body>
+
+<div style="padding: 1em 2em;">
+<h1>Localization Spreadsheet JSONify</h1>
+
+<pre>
+To use this app:
+
+First, create a localization spreadsheet that looks like <a href="https://docs.google.com/spreadsheet/ccc?key=0AqrUvD5TZZs3dF9ULUh5X1JlakVJRGFHaWRZQmFuZEE">this one</a>.
+
+Simply call <a href="<?= ScriptApp.getService().getUrl() ?>"><?= ScriptApp.getService().getUrl() ?></a> 
+with the following querystring parameters set:
+
+sheet_id         required   ex: 0AqrUvD5TZZs3dF9ULUh5X1JlakVJRGFHaWRZQmFuZEE
+sheet_name       required   ex: Main
+threshold        optional   ex: 0.8
+
+<strong>sheet_id</strong>
+
+    The key parameter from a Google Spreadsheet URL, e.g. 
+    "https://docs.google.com/spreadsheet/ccc?key=<strong>0AqrUvD5TZZs3dF9ULUh5X1JlakVJRGFHaWRZQmFuZEE</strong>"
+
+<strong>sheet_name</strong>
+
+    The sheet name to use inside of the spreadsheet.
+
+<strong>threshold</strong>
+
+    Controls the percentage of fully-translated strings a translation must have
+    before it is deployable. In other words, if you have 10 total strings, and
+    your threshold is 0.8, then at least 8 of the strings in a translation must
+    be set, or the language is not considered deployable.
+
+
+Make sure the spreadsheet you want to access is public or that you are logged in 
+and have access to it.
+
+For example, <a href="https://script.google.com/macros/s/AKfycbz_a2Co8B-XLbwKcpmkTt4O7UNyhcenln7WJrQtp3Q/dev?sheet_id=0AqrUvD5TZZs3dF9ULUh5X1JlakVJRGFHaWRZQmFuZEE&sheet_name=Main">this URL</a>, will generate a JSON string translation table using <a href="https://docs.google.com/spreadsheet/ccc?key=0AqrUvD5TZZs3dF9ULUh5X1JlakVJRGFHaWRZQmFuZEE">this spreadsheet</a>.
+</pre>
+
+</div>
+
+</body>
+</html>
