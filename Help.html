@@ -42,7 +42,7 @@ callback         optional       ex: languageLoader
     JSONP callback function name, which can then load the translations into the 
     current page.
 
-For example, <a href="https://script.google.com/macros/s/AKfycbz_a2Co8B-XLbwKcpmkTt4O7UNyhcenln7WJrQtp3Q/dev?sheet_id=0AqrUvD5TZZs3dF9ULUh5X1JlakVJRGFHaWRZQmFuZEE&sheet_name=Main" target="_blank">this URL</a>, will generate a JSON string translation table using <a href="https://docs.google.com/spreadsheet/ccc?key=0AqrUvD5TZZs3dF9ULUh5X1JlakVJRGFHaWRZQmFuZEE" target="_blank">this spreadsheet</a>.
+For example, <a href="<?= ScriptApp.getService().getUrl() ?>?sheet_id=0AqrUvD5TZZs3dF9ULUh5X1JlakVJRGFHaWRZQmFuZEE&sheet_name=Main" target="_blank">this URL</a>, will generate a JSON string translation table using <a href="https://docs.google.com/spreadsheet/ccc?key=0AqrUvD5TZZs3dF9ULUh5X1JlakVJRGFHaWRZQmFuZEE" target="_blank">this spreadsheet</a>.
 
 For more info, see the <a href="https://github.com/nuket/localization-spreadsheet-jsonify" target="_blank">Github sources here</a>.
 </pre>
