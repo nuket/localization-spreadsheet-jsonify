@@ -33,6 +33,7 @@ Step 2
 1. Copy the *contents* of the jquery.localize/ folder to wherever you're trying to serve translations.
 -  Run it.
 -  Follow the instructions of [jquery.localize](https://github.com/coderifous/jquery-localize), it should pull in the JSON translation files you've just generated.
+   i.e. Something like $('[data-localize]').localize('translation');
 
 **Export it to ZIP**: (work in progress)
 
