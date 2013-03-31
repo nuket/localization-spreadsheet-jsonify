@@ -28,11 +28,11 @@ Step 2
 -  Restart your Django instance.
 -  Done.
 
-**Export it to jquery.localize styled JSON files**:
+**Export it to [jquery.localize](https://github.com/coderifous/jquery-localize) styled JSON files**:
 
 1. Copy the *contents* of the jquery.localize/ folder to wherever you're trying to serve translations.
 -  Run it.
--  Follow the instructions of jquery.localize, it should pull in the JSON translation files you've just generated.
+-  Follow the instructions of [jquery.localize](https://github.com/coderifous/jquery-localize), it should pull in the JSON translation files you've just generated.
 
 **Export it to ZIP**: (work in progress)
 
