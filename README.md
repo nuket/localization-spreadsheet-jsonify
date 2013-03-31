@@ -23,10 +23,16 @@ Step 2
 **Export it to Django locales (gettext .po catalogs)**:
 
 1. Copy the *contents* of the gettext/ folder to your Django app folder.
-- Edit localize-django-app.py, set SOURCE_URL to your JSONified spreadsheet URL, and run.
-- Run django-admin.py compilemessages
-- Restart your Django instance.
-- Done.
+-  Edit localize-django-app.py, set SOURCE_URL to your JSONified spreadsheet URL, and run.
+-  Run django-admin.py compilemessages
+-  Restart your Django instance.
+-  Done.
+
+**Export it to jquery.localize styled JSON files**:
+
+1. Copy the *contents* of the jquery.localize/ folder to wherever you're trying to serve translations.
+-  Run it.
+-  Follow the instructions of jquery.localize, it should pull in the JSON translation files you've just generated.
 
 **Export it to ZIP**: (work in progress)
 
