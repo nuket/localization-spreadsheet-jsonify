@@ -1,0 +1,19 @@
+# Translation Header
+# Copyright (C) 2012 Your Name
+# This file is distributed under the same license as the PACKAGE package.
+# Your Name <your@name.name>, 2013
+#
+# gettext catalog generated with help from:
+# https://github.com/nuket/localization-spreadsheet-jsonify
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Your Project 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-12-10 04:56+0000\n"
+"PO-Revision-Date: 2012-12-10 05:35+0000\n"
+"Last-Translator: Your Name <your@name.name>\n"
+"Language-Team: Your Name <your@name.name>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
