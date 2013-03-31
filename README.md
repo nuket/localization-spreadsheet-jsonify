@@ -22,7 +22,7 @@ Step 2
 
 **Export it to Django locales (gettext .po catalogs)**:
 
-1. Copy the /contents/ of the gettext/ folder to your Django app folder.
+1. Copy the *contents* of the gettext/ folder to your Django app folder.
 - Edit localize-django-app.py, set SOURCE_URL to your JSONified spreadsheet URL, and run.
 - Run django-admin.py compilemessages
 - Restart your Django instance.
