@@ -60,11 +60,25 @@ var KEYS_COLUMN    = 0;
 // column you are in, use the English translation for the time being.
 var DEFAULT_VALUES_COLUMN = KEYS_COLUMN + 1;
 
+// Convention: Put the language codes in the first row of the table.
+//
+// A recommended practice is to go from base-language codes to country-specific
+// language codes, e.g. "de" then "de-AT" from left to right in the
+// spreadsheet. The translation-string selection loop below relies on
+// base translations to have been processed before the country-specific
+// cases.
+var LANGUAGE_CODE_ROW = 0;
+
 // Convention: What percentage of keys need a native translation (filled
 // cell), before they are considered deployment ready?
 //
 // Let's say in this case 75% of fields need to be natively translated.
 var DEPLOYMENT_READY_THRESHOLD = 0;
+
+var FORMAT = { 
+  JSON: 0,
+  GETTEXT: 1
+};
 
 function processRequestParams(request) {
   if (request.parameters.sheet_id)   SHEET_ID   = request.parameters.sheet_id;
@@ -96,10 +110,29 @@ function generateJson(request) {
     var dict = {};
     var nativeTerms = 0;
     
+    var full_language_code = data[LANGUAGE_CODE_ROW][c];
+    var base_language_code = full_language_code.substr(0, 2);
+    
+    var base_table = outputTable[base_language_code] || {};
+    
     for (var r = 0; r < rowCount; ++r) {
       var key   = data[r][KEYS_COLUMN];
-      var value = data[r][c] || data[r][DEFAULT_VALUES_COLUMN];
       
+      // If there's no key in this row, then skip.
+      if (!key) continue;
+      
+      // The value is set in this order:
+      //
+      // 1. Use the specific translation.
+      // 2. Use the nearest translation from the same 2-letter locale.
+      //    So for instance, if a specific translation for "de_AT" isn't
+      //    available, it falls back to the "de" translation.
+      // 3. If all else fails, just take the value from the DEFAULT_VALUES_COLUMN,
+      //    which is the language that defines all terms needing translation.
+      
+      var value = data[r][c] || base_table[key] || data[r][DEFAULT_VALUES_COLUMN];
+      
+      // Keep count of each time we used the specific translation.
       if (value == data[r][c])
         nativeTerms++;
       
@@ -124,6 +157,13 @@ function generateJson(request) {
   return ContentService.createTextOutput(outputJson).setMimeType(ContentService.MimeType.JSON);  
 }
 
+function generateGettext() {
+}
+
+function generateUi(request) {
+  
+}
+
 function doGet(request) {
   if (!request ||
       !request.parameters ||
@@ -132,7 +172,13 @@ function doGet(request) {
     return HtmlService.createTemplateFromFile('Help').evaluate();
   }
   
-  processRequestParams(request);
+  if (!request.parameters.format) {
+  }
   
+  if (request.parameters.showUi) {
+    return generateUi(request);
+  }
+  
+  processRequestParams(request);
   return generateJson(request);
 }
