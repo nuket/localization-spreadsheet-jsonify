@@ -31,9 +31,10 @@ Step 2
 **Export it to [jquery.localize](https://github.com/coderifous/jquery-localize) styled JSON files**:
 
 1. Copy the *contents* of the jquery.localize/ folder to wherever you're trying to serve translations.
--  Run it.
+-  Edit generate-language-pack.py, set SOURCE_URL to your JSONified spreadsheet URL, and run.
+-  Copy the translation-*.json files to the folder where you'll be serving your page.
 -  Follow the instructions of [jquery.localize](https://github.com/coderifous/jquery-localize), it should pull in the JSON translation files you've just generated.
-   i.e. Something like $('[data-localize]').localize('translation');
+-  i.e. Something like $('[data-localize]').localize('translation');
 
 **Export it to ZIP**: (work in progress)
 
