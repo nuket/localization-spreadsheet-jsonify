@@ -20,6 +20,14 @@ Export it to JSON:
 
 <a href="https://script.google.com/macros/s/AKfycbxLnEUyElPtL01qHnL7pD2hmTmaO7Tc1yLhjJzQpitpuBfxxBU/exec?sheet%5fid=0AqrUvD5TZZs3dF9ULUh5X1JlakVJRGFHaWRZQmFuZEE&sheet%5fname=Main">https://script.google.com/macros/s/AKfycbxLnEUyElPtL01qHnL7pD2hmTmaO7Tc1yLhjJzQpitpuBfxxBU/exec?sheet%5fid=0AqrUvD5TZZs3dF9ULUh5X1JlakVJRGFHaWRZQmFuZEE&sheet%5fname=Main</a>
 
+Export it to Django locales (gettext .po catalogs):
+
+. Copy the /contents/ of the gettext/ folder to your Django app folder.
+. Edit localize-django-app.py, set SOURCE_URL to your JSONified spreadsheet URL, and run.
+. Run django-admin.py compilemessages
+. Restart your Django instance.
+. Done.
+
 Export it to ZIP: (work in progress)
 
 Unavailable until Google fixes their ContentService so it doesn't mangle 8-bit "application/zip" or "application/octet-stream" output. :(
