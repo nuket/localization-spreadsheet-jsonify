@@ -36,6 +36,8 @@ Step 2
 -  Follow the instructions of [jquery.localize](https://github.com/coderifous/jquery-localize), it should pull in the JSON translation files you've just generated.
 -  i.e. Something like $('[data-localize]').localize('translation');
 
+<a href="http://vilimpoc.org/research/LSJ">Here's an example</a> of jquery.localize in action.
+
 **Export it to ZIP**: (work in progress)
 
 Unavailable until Google fixes their ContentService so it doesn't mangle 8-bit "application/zip" or "application/octet-stream" output. :(
