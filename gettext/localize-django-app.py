@@ -118,7 +118,8 @@ def createPoFromDict(language_code='', string_table={}):
 
     # Create locale directories.
     poPath = FILEPATH.format(language_code)
-    os.makedirs(poPath)
+    if not os.path.isdir(poPath):
+        os.makedirs(poPath)
 
     # Create django.po files.
     poName = poPath + FILENAME
